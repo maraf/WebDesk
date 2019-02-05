@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+<!--  <persistence-unit name="neptuo-osPU" transaction-type="JTA">-->
+<!--  <persistence-unit name="NeptuoOSDefaultPU" transaction-type="RESOURCE_LOCAL">-->
+    <persistence-unit name="NeptuoOSDefaultPU" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>NeptuoOSDefault</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+<!--      <property name="org.hibernate.flushMode" value="MANUAL" />-->
+<!--      <property name="hibernate.connection.autocommit" value="false" />-->
+<!--      <property name="jta.UserTransaction" value="java:comp/UserTransaction" />-->
+<!--      <property name="transaction.factory_class" value="org.hibernate.transaction.JTATransactionFactory" />-->
+<!--      <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.SunONETransactionManagerLookup" />-->
+<!--      <property name="hibernate.current_session_context_class" value="jta" />-->
+        </properties>
+    </persistence-unit>
+</persistence>

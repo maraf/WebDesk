@@ -1,0 +1,9 @@
+.x-login-form {
+    position: absolute;
+}
+
+.x-login-form .x-panel-body {
+/*    background: url('../images/desktop/login-screen/transparent.png') !important;*/
+    background: none !important;
+    border: none !important;
+}

@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.x-label {
+    font: 12px tahoma,arial,helvetica,sans-serif;
+}
+
+.x-error-label {
+    font-weight: bold;
+    color: red;
+    display: block;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 12px;
+    padding: 3px 2px 2px 20px;
+    border: 1px solid transparent;
+    background: 2px center no-repeat;
+}
+
+.x-error-label-active {
+    background-image: url('../images/icons/16/exclamation.png');
+    background-color: #F5DEB7;
+    border-color: orange;
+}
+
+.x-form-field-wrap .x-form-trigger-arrow {
+    right: 0px;
+}
+
+/*form .x-error-label {
+    height: 20px;
+}*/
+
+.x-margined {
+    margin: 10px;
+}
+
+.x-bottom-margined {
+    margin-bottom: 10px;
+}
+
+.x-transparent, .x-transparent .x-panel-body {
+    background: transparent;
+}
+
+.x-block {
+    display: block;
+}
+
+.x-hidden {
+    display: none;
+}
+
+.x-invisible {
+    visibility: hidden;
+}
+
+.x-upload-hidden {
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+    visibility: hidden;
+}

@@ -1,0 +1,298 @@
+body {
+    /*background: url('../images/desktop/wallpaper/moon.jpg') no-repeat left top;*/
+    background: url('../images/desktop/background.png') repeat-x left top;
+    /*background: url('http://localhost:8080/neptuo-service/service/fsys/file-content?fileId=11') repeat left top;*/
+}
+
+#x-coreloading {
+    float: left;
+    margin: 20px;
+    padding: 10px 20px 10px 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial;
+    background: #5F7198 url('../images/desktop/loading.gif') no-repeat 15px center;
+    border: 1px solid #768EB9;
+    border-radius: 15px;
+}
+
+.x-login-screen, .x-workspace {
+    background: url('../images/logo.png') no-repeat right bottom;
+}
+
+/* ========= LOGIN ========================================================== */
+
+.x-languages {
+    height: 25px;
+    margin: 10px;
+    background: #5F7198;
+    border: 1px solid #768EB9;
+    border-radius: 7px;
+}
+
+.x-languages a {
+    width: 24px;
+    height: 15px;
+    float: left;
+    margin: 5px;
+    display: block;
+    opacity: 0.7;
+}
+
+.x-languages a:hover {
+    opacity: 0.9;
+}
+
+.x-languages a span {
+    display: none;
+}
+
+.x-languages a.x-lang-cs {
+    background: url('../images/icons/flags/flag-cz.gif');
+}
+
+.x-languages a.x-lang-en {
+    background: url('../images/icons/flags/flag-gb.gif');
+}
+
+/* ========= DESKTOP ======================================================== */
+
+.x-desktop-item {
+    margin: 5px;
+    padding: 5px;
+    float: left;
+    width: 50px;
+    text-align: center;
+    border: 1px solid transparent !important;
+    background: transparent;
+    border-radius: 3px;
+}
+
+.x-desktop-item-name {
+    font-weight: normal;
+    font-family: tahoma,arial,helvetica,sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+
+.x-desktop .x-view-item-over {
+    border: 1px solid #B2C6ED !important;
+}
+
+.x-desktop .x-view-highlightrow {
+    background: #8FA9D8;
+    border: 1px solid #B2C6ED !important;
+}
+
+/* ========= MAINMENU  ====================================================== */
+
+.x-main-menu {
+    background: #D3E1F1 url('../images/desktop/taskbar/taskbar-background2-reverse.png') repeat-x center bottom;
+/*    background: #D3E1F1 url('../images/desktop/taskbar/taskbar-background-reverse.png') repeat-x center bottom;*/
+/*    background: url("../images/default/panel/white-top-bottom.gif") repeat-x center top;*/
+}
+
+.x-main-menu-right {
+    float: right;
+}
+
+.x-main-menu table, .x-taskbar table {
+    float: left;
+    margin: 3px;
+}
+
+.x-main-menu .x-timeout {
+    float: left;
+    display: block;
+    font-size: 11px;
+    color: #333333;
+}
+
+/* ========= TASKBAR ======================================================== */
+
+.x-taskbar {
+    background: #D3E1F1 url('../images/desktop/taskbar/taskbar-background2.png') repeat-x center top;
+/*    background: #D3E1F1 url('../images/desktop/taskbar/taskbar-background.png') repeat-x center top;*/
+}
+
+.x-taskbar .dskbtn-cover {
+    width: 14px !important;
+    height: 30px !important;
+    float: left;
+    background: url('../images/desktop/taskbar/desktop-button.png') no-repeat left top !important;
+}
+
+.x-taskbar .x-clock-panel {
+    float: left;
+    display: block;
+    font-size: 11px;
+    color: #333333;
+}
+
+.x-taskbar .dskbtn-cover button {
+    display: none;
+}
+
+.x-taskbar .x-btn td, .x-main-menu .x-btn td {
+    background-image: none;
+}
+
+.x-taskbar .x-btn-over td, .x-main-menu .x-btn-over td, .x-taskbar .x-btn-pressed td, .x-main-menu .x-btn-pressed td {
+    background-image: url("../images/default/button/btn.gif");
+}
+
+.x-taskbar-item button {
+    text-align: left;
+}
+
+/*.x-no-icon-taskbar {
+    background: url('../images/icons/24/application.png') no-repeat center left !important;
+}
+
+.x-no-icon-window {
+    background: url('../images/icons/16/application.png') no-repeat center left !important;
+}
+
+.x-hspace-small {
+    margin: 0 3px 0 0 !important;
+}
+
+.x-taskbar .tbi-cover, .x-taskbar .tbi-cover .tbi-content, .x-taskbar .tbi-cover .tbi-content button, .x-taskbar .x-loading .tbi-loading {
+    width: 45px !important;
+    height: 30px !important;
+}
+
+.x-taskbar .tbi-cover {
+    position: relative;
+    float: left;
+    margin-right: 4px;
+}
+
+.x-taskbar .tbi-cover .tbi-content button {
+    position: static !important;
+    left: 0 !important;
+    top: 0 !important;
+}
+
+.x-taskbar .tbi-cover .tbi-content button img {
+    left: 0 !important;
+    top: 0 !important;
+    width: 45px !important;
+    height: 30px !important;
+    background-position: center center !important;
+}
+
+.x-taskbar .tbi-cover .tbi-content, .x-taskbar .tbi-cover .tbi-loading, .x-taskbar .x-loading .tbi-loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url('../images/desktop/taskbar/button-opened.png') no-repeat left top;
+}
+
+.x-taskbar .tbi-cover .tbi-loading {
+    display: none;
+}
+
+.x-taskbar .x-loading .tbi-loading {
+    display: block;
+    background: transparent url('../images/desktop/loading.gif') no-repeat center center;
+}
+
+.x-taskbar .x-taskbar-item-active .tbi-content {
+    background: url('../images/desktop/taskbar/button-active.png') no-repeat left top;
+}*/
+
+/*.x-taskbar .x-btn-over .tbi-content {
+    background: url('../images/desktop/taskbar/button-opened-hover.png') no-repeat left top;
+}*/
+
+/*.x-taskbar .x-taskbar-item-active.x-btn-over .tbi-content {
+    background: url('../images/desktop/taskbar/button-active-hover.png') no-repeat left top;
+}*/
+
+/* ========= WINDOW ========================================================= */
+/*
+.x-shadow {
+    display: none !important;
+}
+
+.x-window-tl {
+    padding-left: 9px;
+    background-image: url("../images/desktop/window/left-corners.png");
+}
+
+.x-window-tl .x-window-header {
+    color: white;
+}
+
+.x-window-maximized .x-window-header {
+    color: black;
+}
+
+.x-window-tr {
+    padding-right: 9px;
+    background-image: url("../images/desktop/window/right-corners.png");
+}
+
+.x-window-tc {
+    background-image: url("../images/desktop/window/top-bottom.png");
+}
+
+.x-window-ml {
+    padding-left: 9px;
+    background-image: url("../images/desktop/window/left-right.png");
+}
+
+.x-window-mr {
+    padding-right: 9px;
+    background-image: url("../images/desktop/window/left-right.png");
+}
+
+.x-window-bl {
+    padding-left: 9px;
+    background-image: url("../images/desktop/window/left-corners.png");
+}
+
+.x-window-br {
+    padding-right: 9px;
+    background-image: url("../images/desktop/window/right-corners.png");
+}
+
+.x-window-bc {
+    background-image: url("../images/desktop/window/top-bottom.png");
+}
+
+.x-window-mc {
+    background: white;
+}
+*/
+
+/* ========= EXPLORER ======================================================= */
+
+.x-explorer-main .x-layout-collapsed {
+    background: #ffffff;
+}
+
+.x-drives-panel .x-panel-header, .x-explorer-main .x-layout-collapsed .x-panel-header {
+    font-weight: normal;
+    font-family: tahoma,arial,helvetica,sans-serif;
+    color: #000000;
+    padding: 3px 3px 3px 5px;
+    background-image: url("../images/default/grid/grid3-hrow.gif");
+    border-bottom-color: #D0D0D0;
+}
+
+.x-explorer-details strong {
+    font-weight: bold;
+}
+
+.x-explorer-details table {
+    width: 100%;
+    font: 11px arial,tahoma,verdana,helvetica;
+    background: white;
+}
+
+.x-explorer-details table td {
+    padding: 1px 4px;
+}

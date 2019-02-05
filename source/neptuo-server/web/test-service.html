@@ -1,0 +1,212 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>TODO supply a title</title>
+        <script type="text/javascript" src="http://samples.localhost/jquery/jquery-1.5.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <input type="text" id="url" value="/server/service/fsys/drives" style="width: 255px" />
+        <input type="text" id="method" value="" style="width: 200px" />
+        <select id="format" style="width: 50px">
+            <option value="application/json">json</option>
+            <option value="application/xml">xml</option>
+        </select>
+        <input type="text" id="authToken" value="" style="width: 100px" />
+        <button id="button">Send request!</button>
+        <hr />
+        <textarea id="params" style="width: 700px; height: 200px;"></textarea>
+        <hr />
+        <button id="templLogin">Login</button>
+        <button id="templIsLogged">IsLogged</button>
+        |
+        <button id="templLogout">Logout</button>
+        <hr />
+        <button id="templUsers">Get Users</button>
+        <button id="templCreateUser">Create User</button>
+        <button id="templDeleteUser">Delete User</button>
+        |
+        <button id="templUserRoles">Get UserRoles</button>
+        <button id="templCreateUserRole">Create UserRole</button>
+        <button id="templAddUserToRole">Add User to Role</button>
+        <button id="templRemoveUserFormRole">Remove User from Role</button>
+        |
+        <button id="templLookups">Lookup</button>
+        <hr />
+        <button id="templImport">Import</button>
+        |
+        <button id="templProps">Properties</button>
+        <button id="templAccessTypes">AccessTypes</button>
+        <hr />
+        <button id="templDrives">Drives</button>
+        <button id="templCreDrives">CreateDrive</button>
+        |
+        <button id="templFolders">Folders</button>
+        <button id="templCreFol">Create folder</button>
+        <button id="templMoveFol">Move folder</button>
+        <button id="templCopyFol">Copy folder</button>
+        <button id="templMoveFile">Move file</button>
+        <button id="templCopyFile">Copy file</button>
+        |
+        <button id="templGetPerms">GetPermissions</button>
+        <button id="templAddPerms">AddPermissions</button>
+        <button id="templRemPerms">RemovePermissions</button>
+
+        <p id="p"></p>
+
+        <script type="text/javascript">
+
+$('#button').click(function() {
+    $.ajax({
+        type: 'POST',
+        url: $('#url').val(),
+        data: $('#params').val(),
+        cache: false,
+        beforeSend: function(xmlHttpRequest) {
+          xmlHttpRequest.setRequestHeader('Accept', $('#format').val());
+          xmlHttpRequest.setRequestHeader('Method', $('#method').val());
+          var token = $('#authToken').val();
+          if(token != "") {
+            xmlHttpRequest.setRequestHeader('AuthToken', token);
+          }
+        },
+        success: function(data) {
+            console.log(eval(data));
+        }
+    });
+});
+
+$("#templLogin").click(function() {
+    $("#params").val("<login><username>admin</username><password>admin</password></login>");
+    $("#url").val("/server/service/core/login");
+    $("#method").val("");
+});
+$("#templIsLogged").click(function() {
+    $("#params").val("");
+    $("#url").val("/server/service/core/login");
+    $("#method").val("isLogged");
+});
+$("#templLogout").click(function() {
+    $("#params").val("");
+    $("#url").val("/server/service/core/logout");
+    $("#method").val("");
+});
+$("#templUsers").click(function() {
+    $("#params").val("");
+    $("#url").val("/server/service/core/users");
+    $("#method").val("");
+});
+$("#templCreateUser").click(function() {
+    $("#params").val("<users><user><name>tester</name><surname>testovic</surname><username>tester</username><enabled>true</enabled><passwordHash>tester</passwordHash></user></users>");
+    $("#url").val("/server/service/core/users");
+    $("#method").val("save");
+});
+$("#templDeleteUser").click(function() {
+    $("#params").val("<users><user><id>8</id></user></users>");
+    $("#url").val("/server/service/core/users");
+    $("#method").val("delete");
+});
+$("#templUserRoles").click(function() {
+    $("#params").val("<userRoles><type>USER_MANAGEABLE</type></userRoles>");
+    $("#url").val("/server/service/core/user-roles");
+    $("#method").val("");
+});
+$("#templCreateUserRole").click(function() {
+    $("#params").val("<userRoles><userRole><name>testovaci</name><parentId>1</parentId></userRole></userRoles>");
+    $("#url").val("/server/service/core/user-roles");
+    $("#method").val("save");
+});
+$("#templAddUserToRole").click(function() {
+    $("#params").val("<userInRoles><userInRole><userId></userId><roleId></roleId></userInRole></userInRoles>");
+    $("#url").val("/server/service/core/user-roles");
+    $("#method").val("addUserToRole");
+});
+$("#templRemoveUserFormRole").click(function() {
+    $("#params").val("<userInRoles><userInRole><userId></userId><roleId></roleId></userInRole></userInRoles>");
+    $("#url").val("/server/service/core/user-roles");
+    $("#method").val("removeUserFormRole");
+});
+$("#templLookups").click(function() {
+    $("#params").val("<identityLookup><identity><username>admin</username></identity></identityLookup>");
+    $("#url").val("/server/service/core/identity-lookup");
+    $("#method").val("");
+});
+$("#templProps").click(function() {
+    $("#params").val("");
+    $("#url").val("/server/service/core/properties");
+    $("#method").val("getSystem");
+});
+$("#templAccessTypes").click(function() {
+    $("#params").val("<accessTypes><accessType><category>fsys</category></accessType></accessTypes>");
+    $("#url").val("/server/service/core/access-types");
+    $("#method").val("");
+});
+$("#templImport").click(function() {
+    $("#params").val("");
+    $("#url").val("/server/service/fsys/import");
+    $("#method").val("");
+});
+$("#templDrives").click(function() {
+    $("#params").val("");
+    $("#url").val("/server/service/fsys/drives");
+    $("#method").val("");
+});
+$("#templCreDrives").click(function() {
+    $("#params").val("<drives><drive><name>Test</name><folderId>4</folderId></drive></drives>");
+    $("#url").val("/server/service/fsys/drives");
+    $("#method").val("create");
+});
+$("#templFolders").click(function() {
+    $("#params").val("<folders><folder><id>1</id></folder></folders>");
+    $("#url").val("/server/service/fsys/folders");
+    $("#method").val("");
+});
+$("#templCreFol").click(function() {
+    $("#params").val("<folders><folder><parentId>1</parentId><name>Test</name></folder></folders>");
+    $("#url").val("/server/service/fsys/folders");
+    $("#method").val("create");
+});
+$("#templMoveFol").click(function() {
+    $("#params").val("<folders><folder><folderId></folderId><targetId></targetId></folder></folders>");
+    $("#url").val("/server/service/fsys/folders");
+    $("#method").val("move");
+});
+$("#templCopyFol").click(function() {
+    $("#params").val("<folders><folder><folderId></folderId><targetId></targetId></folder></folders>");
+    $("#url").val("/server/service/fsys/folders");
+    $("#method").val("copy");
+});
+$("#templMoveFile").click(function() {
+    $("#params").val("<files><file><fileId></fileId><targetId></targetId></file></files>");
+    $("#url").val("/server/service/fsys/files");
+    $("#method").val("move");
+});
+$("#templCopyFile").click(function() {
+    $("#params").val("<files><file><fileId></fileId><targetId></targetId></file></files>");
+    $("#url").val("/server/service/fsys/files");
+    $("#method").val("copy");
+});
+$("#templGetPerms").click(function() {
+    $("#params").val("<folders><folder><id>3</id></folder></folders>");
+    $("#url").val("/server/service/fsys/folders");
+    $("#method").val("getPermissions");
+});
+$("#templAddPerms").click(function() {
+    $("#params").val("<permissions><permission><targetId>2</targetId><typeId>4</typeId><identityId>2</identityId></permission></permissions>");
+    $("#url").val("/server/service/fsys/folders");
+    $("#method").val("addPermissions");
+});
+$("#templRemPerms").click(function() {
+    $("#params").val("<permissions><permission><targetId>2</targetId><typeId>4</typeId><identityId>2</identityId></permission></permissions>");
+    $("#url").val("/server/service/fsys/folders");
+    $("#method").val("removePermissions");
+});
+
+        </script>
+    </body>
+</html>
